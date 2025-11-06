@@ -30,7 +30,7 @@ set.seed(695432)
 
 # sink("results/output.txt")
 
-setwd("C:/Users/jgalimanyskupham/Documents/2025_MI-Chris")
+# setwd("C:/Users/jgalimanyskupham/Documents/2025_MI-Chris")
 
 
 ### Check that a results folder exists in the working directory
@@ -124,6 +124,9 @@ calc_univ_ord_mi <- function(th_v, mod_spec, th_x, x0, xcalc) {
   # baseline age, x0, and a vector at which to calculate the prior and
   # posterior densitites, xcalc.
   fprior <- calc_x_density(xcalc,th_x)
+  
+  # Create model object for calc_x_posterior
+  model <- list(th_y = th_v, mod_spec = mod_spec)
   
   M <- mod_spec$M
   pv     <- rep(NA, M+1)
@@ -245,7 +248,7 @@ for (i in 1:j_ord) {
   
   MI_ord[[i]] <- foreach(n=1:length(x0), .multicombine = T,
                          .packages = c("yada")) %dopar%{
-                           calc_univ_ord_mi(th_v, mod_spec, theta_x, x0[n],xcalc, file)
+                           calc_univ_ord_mi(th_v, mod_spec, theta_x, x0[n], xcalc)
                          }
   
 }
