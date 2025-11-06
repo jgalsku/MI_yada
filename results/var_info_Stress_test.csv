@@ -1,0 +1,9 @@
+Variable,Type,Categories,Missing_Value,Left_Right_Side,Left_Label,Right_Label,Left_Right_Approach
+agey,x,,NA,,,,
+SEX,ordinal,0 1,NA,,,,
+CRS01,ordinal,0 1,NA,,,,
+CRS02,ordinal,0 1,NA,,,,
+CRS03,ordinal,0 1,NA,,,,
+CRS04,ordinal,0 1,NA,,,,
+CRS05,ordinal,0 1,NA,,,,
+CRS06,ordinal,0 1,NA,,,,
